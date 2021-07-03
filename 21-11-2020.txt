@@ -1,0 +1,41 @@
+import java.util.*;
+class univexe extends Exception
+{
+ String s;
+ univexe(String x)
+ {
+ s=x;
+ }
+ public String toString()
+{
+  return "Wrong univ. name";
+}
+}
+
+ 
+
+class univ_exe
+{
+ static void compare(String s) throws univexe
+ {
+  if(s.equals("DIT"))
+   System.out.println("String matched = "+s);
+  else
+ throw new univexe(s);
+  
+}
+ public static void main(String args[])
+{
+ try
+{
+ Scanner sc=new Scanner(System.in);
+ String str;
+ System.out.println("Enter university name");
+ str=sc.next();
+  compare(str);
+}catch(univexe e)
+{
+ System.out.println("Error = "+e);
+}
+}
+}
